@@ -3,39 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Booksearch</title>
 </head>
 <body>      
-
-
     <form id="searchform">
         <input type="text" id="userInput" placeholder="Search for books...">
-      
         <p></p><label for="category">Select a category:</label>
-            <select id="category" name="category">
-                
-              <option value="all">All</option>
-              <option value="art">Art</option>
-              <option value="biography">Biography</option>
-              <option value="history">History</option>
-              <option value="medical">Medical</option>
-              <option value="poetry">Poetry</option>
-            </select>
-            <p></p><label for="sortOption">Select a sorting method:</label>
-            <select id="sortOption">
-                <option value="default">Default</option>
-                <option value="date">Sort by Date</option>
-            </select>
-            <p></p>
-            <button type="submit">Search</button>
+        <select id="category" name="category">
+            <option value="all">All</option>
+            <option value="art">Art</option>
+            <option value="biography">Biography</option>
+            <option value="history">History</option>
+            <option value="medical">Medical</option>
+            <option value="poetry">Poetry</option>
+        </select>
+        <p></p><label for="sortOption">Select a sorting method:</label>
+        <select id="sortOption">
+            <option value="default">Default(by actuality)</option>
+            <option value="date">Sort by Date</option>
+        </select>
+        <p></p>
+        <button type="submit">Search</button>
     </form>
-    
-    
     <div id="results"></div>
-    
-
-
-
-    <script src="test.js"></script>
+    <div id="pagination"></div>
+    <script src="script.js"></script>
 </body>
 </html>

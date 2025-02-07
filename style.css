@@ -1,0 +1,458 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Hero section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80') center/cover;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+/* Search container */
+.search-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.search-box {
+    display: flex;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 1rem;
+    border: none;
+    font-size: 1rem;
+}
+
+.search-box input:focus {
+    outline: none;
+}
+
+.search-button {
+    background: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.search-button:hover {
+    color: #333;
+}
+
+/* Filters */
+.filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    color: white;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-size: 0.9rem;
+}
+
+.filter-group select {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    background-size: 1.5rem;
+}
+
+.filter-group select option {
+    background: white;
+    color: #333;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.results-count {
+    margin-bottom: 1rem;
+    color: #666;
+}
+
+/* Books grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.book-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.book-card img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.book-card .content {
+    padding: 1rem;
+}
+
+.book-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.book-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Full book view */
+.full-book-view {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 3rem;
+    background: white;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem auto;
+    width: 1900px;
+}
+
+.full-book-view img {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 4px;
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 800px;
+}
+
+.book-details h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    color: #222;
+}
+
+.book-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.meta-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.meta-label {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-value {
+    font-size: 1rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.book-details .description {
+    line-height: 1.8;
+    color: #444;
+    font-size: 1.1rem;
+    max-width: 65ch;
+}
+
+.description h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: #222;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+/* Loading bar */
+.loading-bar {
+    height: 3px;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    display: none;
+}
+
+.loading-bar.active {
+    display: block;
+}
+
+.loading-bar-progress {
+    height: 100%;
+    background-color: #007bff;
+    animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Pagination */
+#pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+#pagination button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#pagination button:hover {
+    background: #0056b3;
+}
+
+/* Back to search button */
+button.backtosearch {
+    display: inline-flex;
+    max-width: 120px;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button.backtosearch:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+button.backtosearch:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button.backtosearch::before {
+    content: "←";
+    font-size: 1.1em;
+    display: inline-block;
+    margin-right: 0.3rem;
+}
+
+/* Adaptive styles */
+@media (max-width: 1900px) {
+    .full-book-view {
+        width: 95%;
+    }
+}
+
+@media (max-width: 1600px) {
+    .full-book-view {
+        grid-template-columns: 350px 1fr;
+        gap: 4rem;
+        padding: 4rem;
+    }
+}
+
+@media (max-width: 1280px) {
+    .full-book-view {
+        grid-template-columns: 300px 1fr;
+        gap: 3rem;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .full-book-view {
+        grid-template-columns: 1fr;
+        padding: 2rem;
+    }
+    
+    .full-book-view img {
+        max-width: 250px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 3rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        justify-content: space-between;
+    }
+    
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .full-book-view {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .search-box input {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .filter-group select {
+        width: 100%;
+    }
+    
+    .book-meta {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 2rem 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 1.75rem;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #pagination {
+        flex-wrap: wrap;
+    }
+    
+    #pagination button {
+        flex: 1 1 45%;
+    }
+    
+    button.backtosearch {
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .book-card .content {
+        padding: 0.75rem;
+    }
+    
+    .book-details h2 {
+        font-size: 1.75rem;
+    }
+    
+    .meta-label {
+        font-size: 0.85rem;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .hero {
+        padding: 1.5rem;
+    }
+    
+    .full-book-view {
+        grid-template-columns: 200px 1fr;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+}

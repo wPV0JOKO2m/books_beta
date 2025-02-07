@@ -3,30 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booksearch</title>
+    <title>Search for books</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>      
-    <form id="searchform">
-        <input type="text" id="userInput" placeholder="Search for books...">
-        <p></p><label for="category">Select a category:</label>
-        <select id="category" name="category">
-            <option value="all">All</option>
-            <option value="art">Art</option>
-            <option value="biography">Biography</option>
-            <option value="history">History</option>
-            <option value="medical">Medical</option>
-            <option value="poetry">Poetry</option>
-        </select>
-        <p></p><label for="sortOption">Select a sorting method:</label>
-        <select id="sortOption">
-            <option value="default">Default(by actuality)</option>
-            <option value="date">Sort by Date</option>
-        </select>
-        <p></p>
-        <button type="submit">Search</button>
-    </form>
-    <div id="results"></div>
-    <div id="pagination"></div>
+<body>
+    <header class="hero">
+        <h1>Search for books</h1>
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="userInput" placeholder="Search for books...">
+                <button type="submit" class="search-button">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="filters">
+                <div class="filter-group">
+                    <label>Categories</label>
+                    <select id="category" name="category">
+                        <option value="all">all</option>
+                        <option value="art">art</option>
+                        <option value="biography">biography</option>
+                        <option value="history">history</option>
+                        <option value="medical">medical</option>
+                        <option value="poetry">poetry</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sorting by</label>
+                    <select id="sortOption">
+                        <option value="relevance">relevance</option>
+                        <option value="date">date</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="loading-bar">
+        <div class="loading-bar-progress"></div>
+    </div>
+
+    <main>
+        <div class="results-count"></div>
+        <div id="results" class="books-grid"></div>
+        <div id="pagination"></div>
+    </main>
+
     <script src="script.js"></script>
 </body>
 </html>

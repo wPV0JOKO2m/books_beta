@@ -22,6 +22,7 @@ This site allows users to search for books using the **Google Books API**. Users
 ## techologies used
 
 - HTML
+- CSS
 - JavaScript (no frameworks)
 - Google Books API
 
